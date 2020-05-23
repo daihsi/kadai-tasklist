@@ -26,7 +26,11 @@
         </header>
 
         <div class="container">
+
+            @include('commons.error_tasks')
+
             @yield('content')
+
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
