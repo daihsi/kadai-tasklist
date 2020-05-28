@@ -13,9 +13,13 @@
                     <ul class="navbar-nav mr-auto"></ul>
                     <ul class="navbar-nav">
                         @if (Auth::check())
-                            <li class="nav-item">
-                            {!! link_to_route('logout.get', 'ログアウト') !!}
-                            </li>
+                            <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-item">
+                                {!! link_to_route('logout.get', 'ログアウト') !!}
+                                </li>
+                            </ul>
                         @else   
                             <li class="nav-item">{!! link_to_route('signup.get', 'サインアップ', [], ['class' => 'nav-link']) !!}</li>
                             <li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
